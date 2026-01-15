@@ -1,0 +1,274 @@
+\documentclass[a4paper]{article}
+
+\usepackage[T1]{fontenc}
+%\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+
+\usepackage{verbatim}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{fontspec}
+
+
+\usepackage{parskip}
+\setlength{\parskip}{1em}
+
+\usepackage{minted}
+
+% Define um ambiente personalizado
+%\newenvironment{myMinted}[1] {\begin{minted}[frame=single, fontsize=\small, baselinestretch=1.2]{#1}\vspace{-1em}} {\end{minted}\vspace{-1em}}  
+
+
+
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{physics}
+\usepackage{siunitx}
+
+\title{Resumo \\ Introdução à Utilização de \\  \textbf{\huge Git \& Github}}
+\author{Hygor Melo de Sena}
+\date{11 de janeiro de 2026}
+
+\sloppy
+
+\setmainfont{Lora}
+
+%\setcounter{secnumdepth}{0}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,      
+    linktoc=all          
+}
+
+\begin{document}
+    \maketitle
+    
+    \newpage
+    
+    \tableofcontents
+    
+    \newpage
+    
+    \section{Capítulo 1 $ \blacktriangleright $ O que é Git? O que é versionamento?}
+    
+    \bigskip
+    
+    Git é um dos sistemas de controle de versões de programas, ou seja, ele é um sistema de controle de versão (\textit{VCS}). Dessa afirmação tiramos o significado de versionamento. Versionamento trata-se simplesmente de versões que um \textit{software} pode sofrer durante seu processo de desenvolvimento como se pode ver abaixo:
+    
+    \medskip
+    
+    \begin{figure}[hb] % Parâmetros de posição
+        \centering % Centralizando imagem na posição
+        \includegraphics[scale=0.6]{./imagens/gitglow.png} % Inserindo imagem redimensionada
+        \caption{Fluxograma de Versionamento Git} % Legenda da imagem
+    \end{figure}   	
+    
+    \medskip
+    
+    Na figura acima também podemo ver o ciclo de versionamento do Git. Temos a versão Master, Hotfix, Develop, Release, Feature. Master tem por finalidade um branch de produção, Develop é branch de integração contínua do desenvolvimento, Feature é desenvolvimento de novas funcionalidades específicas, Realese é preparar uma versão candidata à produção, Hotfix é correção urgente em produção. Confira a tabela abaixo:
+    
+    \bigskip
+    
+    \begin{center}
+        \begin{tabular}{l r r r r}
+            \hline 
+            Branch & Objetivo Principal & Estável & Origem & Destino Final\\
+            \hline
+            Master & Produção & Sim & Release/Hotfix & —\\
+            \hline
+            Develop & Integração do desenvolvimento & Parcial & Master & Release\\
+            \hline
+            Feature & Nova funcionalidade & Não & Develop & Develop\\
+            \hline
+            Release & Estabilização de versão & Quase & Develop & Master + Develop\\
+            \hline
+            Hotfix & Correção urgente & Sim & Master & Master + Develop\\
+        \end{tabular}
+    \end{center}
+    
+    \newpage
+    
+    \section{Capítulo 2 $ \blacktriangleright $ O que é GitHub? Para que serve?}
+    
+    \bigskip
+    
+    \textbf{GitHub} é uma plataforma online de hospedagem e colaboração de código baseada no Git, utilizada para versionar, compartilhar, revisar e gerenciar projetos de software de forma organizada e rastreável.
+    \smallskip
+    Em termos práticos, o GitHub permite:
+    
+    \begin{itemize}
+        \item Armazenar código-fonte em repositórios remotos.
+        \item Controlar versões (histórico completo de alterações).
+        \item Trabalhar em equipe, com múltiplas pessoas atuando no mesmo projeto sem sobrescrever código.
+        \item Criar e revisar mudanças por meio de \textit{branches}, \textit{commits} e \textit{pull requests}.
+        \item Documentar projetos (README, wikis).
+        \item Automatizar processos com CI/CD (Github Actions)
+        \item Gerenciar tarefas com \textit{issues}, \textit{milestones} e projetos.
+    \end{itemize}	
+    
+    \medskip
+    
+    Em uma frase: GitHub é o ambiente onde projetos versionados com Git vivem, evoluem e são colaborados publicamente ou de forma privada.
+    
+    \newpage
+    
+    \section{Capítulo 3 $ \blacktriangleright $ A evolução do Git e GitHub}
+    
+    Git (2005) nasceu da necessidade e da raiva:\\
+    Linus Torvalds ficou sem ferramenta boa depois da briga com a BitKeeper, criou algo rápido, poderoso, distribuído e com integridade de dados fortíssima.
+    
+    GitHub (2008) nasceu da pergunta:\\
+    "E se a gente pegasse esse Git incrível... e colocasse uma interface web bonita + rede social + colaboração fácil em cima dele?"
+    
+    Resultado:
+    GitHub transformou o Git de "ferramenta de linha de comando para nerds do kernel" em algo que todo mundo usa (empresas, iniciantes, open-source, times enormes, educação...).
+    Curiosidades legais
+    O primeiro commit do Git (7 de abril de 2005) foi um README bem simples
+    O apelido inicial do Git dado pelo próprio Linus: "the information manager from hell".\\ 
+    GitHub demorou alguns anos para ficar famoso, mas quando explodiu... foi muito rápido
+    Hoje em dia muita gente fala "Git" quando na verdade quer dizer "GitHub" (e vice-versa)
+    Resumindo em uma frase:
+    Git resolveu o problema técnico de controle de versão distribuído.
+    GitHub resolveu o problema social de como milhões de programadores trabalham juntos.
+    
+    
+    \newpage
+    
+    \section{Capítulo 4 $ \blacktriangleright $ Instalações e configurações importantes}
+    
+    \newpage
+    
+    \section{Capítulo 5  Repetições}
+    
+    \newpage
+    
+    \section{Capítulo 6  Listas, dicionários, tuplas e conjuntos}
+    
+    \subsection{Trabalhando com índices}
+    \bigskip
+    
+    De forma leiga, índices são números que fazem referência a um elemento de uma lista, veja o programa abaixo:
+    
+    \medskip
+    
+    \begin{minted}[breaklines, linenos, numbersep=5pt, xleftmargin=1.5em]{python}
+        números = [0, 0, 0, 0, 0]
+        x = 0
+        while x < 5:
+        números[x] = int(input(f"Número {x + 1}: "))
+        x += 1
+        
+        while TRUE:
+        escolhido = int(input(f"Que posição você quer imprirmir (0 para sair): "))
+        
+        if escolhido == 0:
+        break
+        
+        print(f"Você escolheu o número {números[escolhido - 1]}")    
+    \end{minted}  
+    
+    \subsection{Cópia e fatiamento de listas}
+    \subsection{Tamanho de listas}
+    \subsection{Adição de elementos}
+    \subsection{Remoção de elementos da lista}
+    \subsection{Usando listas com filas}
+    \subsection{Uso de listas com pilhas}
+    \subsection{Pesquisa}
+    
+    Podemos pesquisar se um elemento está ou não em uma lista, verificando do primeiro ao último elemento se o valor procurado estiver presente:
+    
+    \medskip
+    
+    \begin{minted}{python}
+        #Pesquisa Sequêncial
+        
+        L = [15, 7, 27, 39]
+        p = int(input("Digite o valor a procurar:"))
+        achou = FALSE
+        x = 0
+        
+        while x < len(L):
+        if L[x] == p:
+        achou = TRUE
+        break
+        x += 1
+        
+        if achou:
+        print(f"{p} achado na posição {x}")
+        
+        else:
+        print(f"{p} não encontrado")                                
+    \end{minted}   
+    
+    \medskip
+    
+    \subsection{Usando \textit{for}}
+    
+    A instrução for funciona de forma parecida a \textit{while}, mas a cada repetição utiliza um elemento diferente da lista.
+    
+    A cada repetição, o próximo elemento da lista é utilizado, o que se repete até o fim da lista. Vamos escrever um programa que utilize \textbf{for} para imprimir todos os elementos de uma lista:
+    
+    \medskip
+    
+    \begin{minted}{python}
+        L = [8, 9, 15]
+        for e in L:
+        print(e)
+    \end{minted}
+    
+    \medskip
+    
+    \subsection{Range}
+    
+    A função \textbf{range} é um gerador de números que possui inicio (i), fim \textbf{aberto} (f) e um compasso (c), onde este é a uma contagem gradativa \{\(c = c + (n+1), \forall n \in \mathbb{N}\)\}. Veja no exemplo abaixo:
+    
+    \medskip
+    
+    \begin{minted}{python}
+        for t in range(i, f, c):
+        print(t, end=" ")
+        print()                 
+    \end{minted}
+    
+    \medskip   
+    \noindent Observe que podermos substituir i por 1, f por 100 e c por 2, por exemplo. Isso vai nos gerar número impares. \footnote{Lembre-se que f é aberto, ou seja, o último número gerado na verdade será 99 e não 100.}
+    
+    
+    
+    \subsection{Enumarate}
+    
+    \bigskip
+    
+    Com a função \textbf{enumarate} podemos ampliar as funcionalidades de \textbf{for} facilmente. Vejamos como imprimir uma lista, em que teremos o índice entre colchetes e o valor à sua direita:
+    
+    \medskip
+    
+    \begin{minted}{python}
+        L = [5, 9, 13]
+        x = 0
+        for e in L:
+        print(f"[{x}] {e}")
+        x+=1
+    \end{minted}
+    
+    \medskip
+    
+    \noindent Veja o mesmo programa, mas utilizando a função \textbf{enumarate}:
+    
+    \medskip
+    
+    \begin{minted}{python}
+        L =[5, 9, 13]
+        for x, e in enumarate(L):
+        print(f"[{x}] {e}")
+    \end{minted}
+    \medskip
+    
+    
+    
+    
+    
+    
+\end{document}
