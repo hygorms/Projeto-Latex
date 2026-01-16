@@ -8,6 +8,7 @@
 \usepackage{geometry}
 \usepackage{hyperref}
 \usepackage{fontspec}
+\usepackage{fancyhdr}
 
 
 \usepackage{parskip}
@@ -32,7 +33,9 @@
 
 \sloppy
 
-\setmainfont{Lora}
+\setmainfont{Spectral}
+
+
 
 %\setcounter{secnumdepth}{0}
 
@@ -41,6 +44,10 @@
     linkcolor=blue,      
     linktoc=all          
 }
+
+\pagestyle{fancy}
+
+
 
 \begin{document}
     \maketitle
@@ -140,135 +147,114 @@
     
     \newpage
     
-    \section{Capítulo 5  Repetições}
+    \section{Capítulo 5 $ \blacktriangleright $ Clonando um Repositório}
+    
+    A clonagem de repositórios do GitHub é essencial para que se possa trabalhar com o código fonte de terceiro ou projeto de terceiro facilmente. E o processo é simples como se pode ver abaixo:
+    
+    \medskip
+    
+    \begin{figure}[hb]
+        \centering
+        \includegraphics*[scale=0.4]{./imagens/githubclonetest.png}
+        \caption{Exemplo de clonagem de repositório}
+    \end{figure}
+    
+    \medskip
+    
+    Como mostra a imagem acima, é possivel clonar repositório de forma simples com o github desktop (ferramenta facilitadora). Deve-se observar que o repositório clonado de terceiro não pode ser alterado e enviado como uma modificação original, ou seja, o repositório clonado pode ser usado apenas para testes e projetos pessoais observando a licença daquele. O que pode ser feito é sugerir modificações para o dono do repositório e/ou iniciar uma \textit{fork}. Como podemos ver nessa outra imagem abaixo a modificação do diretório associado a clonagem do \textit{repo} do prof. Guanabara não pode ser "subida" de modo a substitui o original.
+    
+   
+    
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[scale=0.5]{./imagens/testsdemodificacaorepoterceiro.png}
+        \caption{Exemplo de modificação de \textit{repo} de terceiro.}
+    \end{figure} 
+    
     
     \newpage
     
-    \section{Capítulo 6  Listas, dicionários, tuplas e conjuntos}
+    \section{Capítulo 6 $ \blacktriangleright $ Versionando seus projetos antigos}
+
+    O versionamento de um é feito de forma automática pelo \textbf{GitHub-Desktop} todas as vezes que se faz um \textit{commit} na \textit{branch-master} ou demais \textit{branchs} como vimos no capitulo 1. Cada \textit{commit} salva o estado do seu projeto com as modificações feitas. Podemos observar isso abaixo:
     
-    \subsection{Trabalhando com índices}
-    \bigskip
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[scale=0.35]{./imagens/historicocommit.png}
+    \end{figure}
     
-    De forma leiga, índices são números que fazem referência a um elemento de uma lista, veja o programa abaixo:
+    \newpage
     
-    \medskip
+    \section{Capítulo 7 $ \blacktriangleright $ Guia de Linguagem Markdown}
     
-    \begin{minted}[breaklines, linenos, numbersep=5pt, xleftmargin=1.5em]{python}
-        números = [0, 0, 0, 0, 0]
-        x = 0
-        while x < 5:
-        números[x] = int(input(f"Número {x + 1}: "))
-        x += 1
-        
-        while TRUE:
-        escolhido = int(input(f"Que posição você quer imprirmir (0 para sair): "))
-        
-        if escolhido == 0:
-        break
-        
-        print(f"Você escolheu o número {números[escolhido - 1]}")    
-    \end{minted}  
-    
-    \subsection{Cópia e fatiamento de listas}
-    \subsection{Tamanho de listas}
-    \subsection{Adição de elementos}
-    \subsection{Remoção de elementos da lista}
-    \subsection{Usando listas com filas}
-    \subsection{Uso de listas com pilhas}
-    \subsection{Pesquisa}
-    
-    Podemos pesquisar se um elemento está ou não em uma lista, verificando do primeiro ao último elemento se o valor procurado estiver presente:
+    O \textbf{MarkDown} é uma linguagem de marcação criada por criada por John Gruber e Aaron Swartz em 2004. Ela foi desenvolvida para ser uma versão simplificada do html; resumidamente. Temos varias possibilidades de aplicação mesmo para fazer diagramas. Abaixo apresento uma exposição daquilo que aprendi:
     
     \medskip
     
-    \begin{minted}{python}
-        #Pesquisa Sequêncial
+    \begin{minted}[breaklines, linenos, numbersep=5pt, xleftmargin=1.5em]{markdown}
+        # Primeiras Explicações do que é o Markdown
+        ***
+        Abaixo podemos verificar uma equação matemática:
         
-        L = [15, 7, 27, 39]
-        p = int(input("Digite o valor a procurar:"))
-        achou = FALSE
-        x = 0
+        $$
+        \sum^{n}_{n=0} \frac{n^2+2}{n-1} = ?
+        $$
         
-        while x < len(L):
-        if L[x] == p:
-        achou = TRUE
-        break
-        x += 1
+        Dentre outras possibilidades o **Markdown** pode oferecer similaridades ao __*html*__
         
-        if achou:
-        print(f"{p} achado na posição {x}")
+        ## Construindo Tabelas
+        ***
+        Podemos contruir tabelas:
         
-        else:
-        print(f"{p} não encontrado")                                
-    \end{minted}   
-    
-    \medskip
-    
-    \subsection{Usando \textit{for}}
-    
-    A instrução for funciona de forma parecida a \textit{while}, mas a cada repetição utiliza um elemento diferente da lista.
-    
-    A cada repetição, o próximo elemento da lista é utilizado, o que se repete até o fim da lista. Vamos escrever um programa que utilize \textbf{for} para imprimir todos os elementos de uma lista:
-    
-    \medskip
-    
-    \begin{minted}{python}
-        L = [8, 9, 15]
-        for e in L:
-        print(e)
+        |Num|Nome|Aluno|
+        |:---|:---:|---:|
+        |01|João Guimarães|9,0|
+        |02|Marta Peres|8,0|
+        |03|Tobias Pétrio|6,0|
+        
+        ## Inserindo Imagens
+        
+        Podemos inserir imagens:
+        
+        ![Logo MarkDown](https://upload.wikimedia.org/wikipedia/commons/4/48/Markdown-mark.svg)
+        
+        Além disso em alguns editores é possivel usar HTML se o desejo for algo mais dimencionado como podemos ver abaixo:
+        
+        <img src=https://upload.wikimedia.org/wikipedia/commons/4/48/Markdown-mark.svg width =100>
+        
+        Obs: por algum motivo o alinhamento quebra a formatação
+        
+        ## Implementação de listas
+        ***
+        As listas númericas podem ser feitas com qualquer número seguido de ponto:
+        
+        1. Garoto
+        2. Garota
+        3. Cachorro
+        1. Vira-lata
+        2. Husk
+        1. Homem
+        2. Mulher
+        
+        Ou pode ser feita com asterisco ou traço para um lista não ordenada:
+        
+        * Hoje
+        * Agora
+        * Amanhã
+        
+        - Depois
+        - Tarde
+        - Postergar
+        
+        Pode ser também uma lista de a fazer:
+        
+        - [ ] Comprar água
+        - [x] Comprar maçã
+        - [ ] ~~Comprar suco~~
+        
+        Para completar uma tarefa basta inserir um X.    
     \end{minted}
     
-    \medskip
-    
-    \subsection{Range}
-    
-    A função \textbf{range} é um gerador de números que possui inicio (i), fim \textbf{aberto} (f) e um compasso (c), onde este é a uma contagem gradativa \{\(c = c + (n+1), \forall n \in \mathbb{N}\)\}. Veja no exemplo abaixo:
-    
-    \medskip
-    
-    \begin{minted}{python}
-        for t in range(i, f, c):
-        print(t, end=" ")
-        print()                 
-    \end{minted}
-    
-    \medskip   
-    \noindent Observe que podermos substituir i por 1, f por 100 e c por 2, por exemplo. Isso vai nos gerar número impares. \footnote{Lembre-se que f é aberto, ou seja, o último número gerado na verdade será 99 e não 100.}
-    
-    
-    
-    \subsection{Enumarate}
-    
-    \bigskip
-    
-    Com a função \textbf{enumarate} podemos ampliar as funcionalidades de \textbf{for} facilmente. Vejamos como imprimir uma lista, em que teremos o índice entre colchetes e o valor à sua direita:
-    
-    \medskip
-    
-    \begin{minted}{python}
-        L = [5, 9, 13]
-        x = 0
-        for e in L:
-        print(f"[{x}] {e}")
-        x+=1
-    \end{minted}
-    
-    \medskip
-    
-    \noindent Veja o mesmo programa, mas utilizando a função \textbf{enumarate}:
-    
-    \medskip
-    
-    \begin{minted}{python}
-        L =[5, 9, 13]
-        for x, e in enumarate(L):
-        print(f"[{x}] {e}")
-    \end{minted}
-    \medskip
-    
-    
-    
-    
-    
+    \section{Capítulo 8 $ \blacktriangleright $ Git Branch no GitHub-Desktop}
     
 \end{document}
