@@ -1,2 +1,2 @@
 # Projeto-Latex
-Esse projeto é destinado para exposição dos meus aprendizado em Latex
+Esse projeto é destinado a exposição dos meus aprendizado em Latex
